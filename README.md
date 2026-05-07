@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+Image Filter App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack image filtering web application built with:
 
-## Available Scripts
+Frontend: React
+Backend: Django + Django REST Framework
+Image Processing: Pillow
 
-In the project directory, you can run:
+Users can upload images, apply filters, preview results, and download the filtered image.
 
-### `npm start`
+Features
+Upload image
+Apply image filters:
+Grayscale
+Blur
+Brightness enhancement
+Preview original image
+Preview filtered image
+Download filtered image
+REST API integration
+Tech Stack
+Frontend
+React
+Axios
+Backend
+Django
+Django REST Framework
+Pillow
+django-cors-headers
+Project Structure
+challenge2/
+│
+├── backend/
+│   ├── api/
+│   ├── image_filter/
+│   ├── media/
+│   └── manage.py
+│
+└── frontend/
+    ├── src/
+    └── package.json
+Backend Setup
+1. Navigate to backend
+cd backend
+2. Create virtual environment
+python3 -m venv venv
+3. Activate virtual environment
+Linux / Mac
+source venv/bin/activate
+Windows
+venv\\Scripts\\activate
+4. Install dependencies
+pip install django djangorestframework pillow django-cors-headers
+5. Run migrations
+python manage.py makemigrations
+python manage.py migrate
+6. Start backend server
+python manage.py runserver
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Backend runs on:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+http://127.0.0.1:8000/
+Frontend Setup
+1. Navigate to frontend
+cd frontend
+2. Install dependencies
+npm install
+npm install axios
+3. Start React app
+npm start
 
-### `npm test`
+Frontend runs on:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+http://localhost:3000/
+API Endpoints
+Upload Image
+POST /api/upload/
+Form Data
+Key	Type
+image	File
+Apply Filter
+POST /api/filter/<image_id>/
+JSON Body
+{
+  "filter": "grayscale"
+}
 
-### `npm run build`
+Available filters:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+grayscale
+blur
+bright
+Example Workflow
+Upload an image
+Choose a filter
+View filtered result
+Download filtered image
+Future Improvements
+More filters
+Image resizing
+User authentication
+Filter intensity controls
+Image history
+Cloud deployment
+Author
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Developed by Nedal Shoqo , Tariq Abu AlSoud.
